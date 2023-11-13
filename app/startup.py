@@ -35,7 +35,7 @@ operation = os.environ['OPERATION']
 
 local_storage_folderpath = '/app/files'
 
-if operation == 'calibration':
+if operation == 'calibrate':
     
     source_calibration_fname = os.environ['TRAINING_CALIBRATION_FILENAME']
     local_calibration_fpath = os.path.join(local_storage_folderpath, source_calibration_fname)
@@ -88,4 +88,4 @@ elif operation == 'apply':
 
 
 else:
-    print("Unrecognized operation. Allowed operations are: 'calibration', 'apply'. Terminating.")
+    print("Unrecognized operation. Allowed operations are: 'calibrate', 'apply'. Terminating.")
