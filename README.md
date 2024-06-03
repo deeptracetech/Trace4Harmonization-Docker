@@ -2,7 +2,7 @@
 
 ## Description
 
-
+Harmonize numerical values extracted from medical images (e.g. acquired with different models of image-acquisition system)
 
 ## Usage
 For the calibration stage run:
