@@ -36,3 +36,8 @@ Then upload to the chAImeleon platform as follows:
 - In the new dashboard opened launch a desktop environment
 - Load the compressed docker image by drag and drop pr through the guacamole interface
 - Test the application as described in Usage
+
+
+## LICENSE
+
+The code in the repository is distributed under the AGPL-v3.0 license attached. PLEASE NOTICE that the license refers ONLY TO THE CODE publicly visible here in the repository AND NOT IN ANY WAY to the attached asset files in the release section, that are not generated from code packaging. In particular, the software `Trace4Harmonization.exe`, for which you can find more details here: https://openebench.bsc.es/tool/trace4harmonization, is distributed only with a commercial license and YOU SHOULD CONTACT DeepTrace Technologies s.r.l. for its usage and redistribution.
