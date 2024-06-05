@@ -30,7 +30,7 @@ def run_apply(csv_fpath, parameters_t4r_fpath):
 
 
 operation = os.environ['OPERATION']
-local_files_folderpath = '/app/files'
+local_files_folderpath = os.environ['WORKDIR'] if 'WORKDIR' in os.environ else '/app/files'
 
 
 

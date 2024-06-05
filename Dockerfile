@@ -1,7 +1,7 @@
 ## Base image:
 FROM demartis/matlab-runtime:R2023a
 
-LABEL name="image_batch_Trace4Harmonization"
+LABEL name="trace4harmonization"
 LABEL version="1.0"
 LABEL authorization="This Dockerfile is intended to build a container image that will be publicly accessible in the CHAIMELEON images repository."
 
@@ -29,3 +29,4 @@ RUN mkdir -p /home/chaimeleon/datasets && \
 COPY ./app /app
 
 WORKDIR /home/chaimeleon
+ENTRYPOINT ["python3", "/app/startup.py"]
