@@ -5,6 +5,20 @@
 Harmonize numerical values extracted from medical images (e.g. acquired with different models of image-acquisition system)
 
 ## Usage
+
+### In production
+If the image is production-ready (i.e. it has been built and loaded on the chaimeleon platform), you can run the following commands, for the **training stage**:
+
+```
+jobman submit -i trace4harmonization -- -- OPERATION=calibrate WORKDIR=~/persistent-home TRAINING_CALIBRATION_FILENAME=<file_to_be_used_for_harmonization_training>.csv
+```
+and for the **application stage**:
+
+```
+jobman submit -i trace4harmonization -- -- OPERATION=apply WORKDIR=~/persistent-home CLASSIFICATION_APPLY_FILENAME=<file_to_be_harmonized>.csv
+```
+
+### During development
 For the calibration stage run:
 
 ```
@@ -15,6 +29,19 @@ For the application stage run:
 
 ```
 jobman submit -- "udocker load -i ~/persistent-home/trace4harmonization-docker.tar.gz trace4harmonization && udcoker run --user=root -t --rm -v /home/chaimeleon/persistent-home:/app/files --env OPERATION=apply --env TRAINING_CALIBRATION_FILENAME=<csv_filename_for_application_inside_persistend_mount.csv>  trace4harmonization:latest python3 /app/startup.py"
+```
+
+### Additional commands
+
+To see the list of the job launched and their status:
+
+```
+jobman list
+```
+ To see the logs of a particular job listed:
+
+```
+jobman logs -j <job_id>
 ```
 
 ## Dev info
